@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+
+{% block title %}
+Listado Cliente
+{% endblock title %}
+
+{{% block content %}
+
+<h2>Clientes</h2>
+<table class="table table-bordered">
+  <thead>
+    <tr>
+      <th>Nombre</th>
+      <th>Acciones</th>
+   
+    </tr>
+  </thead>
+  <tbody>
+    {% for cliente in clientes %}
+    <tr>
+      <td>{{ cliente.nombre }}</td>
+      <td> <a href="{% url 'ventas:crear_venta' cliente.id %}" class="btn btn-sm btn-primary"> Crear Venta</a></td>
+
+
+    </tr>
+    {% endfor %}
+  </tbody>
+</table>
+
+
+
+
+
+
+
+{% endblock content %}}
